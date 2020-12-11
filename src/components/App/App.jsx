@@ -13,13 +13,11 @@ class App extends Component {
     if (parseContacts) {
       this.props.setCont(parseContacts);
     }
-    console.log(parseContacts);
   };
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.cont !== this.props.contacts) {
       localStorage.setItem('contacts', JSON.stringify(this.props.contacts));
     }
-    console.log(prevProps.contacts);
   }
 
   render() {
