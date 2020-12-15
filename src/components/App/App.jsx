@@ -35,7 +35,7 @@ class App extends Component {
           <Form/>
           <h2>Contacts</h2>
          <CSSTransition
-          in={this.props.contacts.length > 1}
+          in={this.props.contacts.length > 1 || this.props.filter !== ''}
           timeout={250}
           classNames={styles}
           unmountOnExit
@@ -50,7 +50,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    contacts: state.contactsReducer.contacts
+    contacts: state.contactsReducer.contacts,
+    filter: state.contactsReducer.filter
   }
 };
 
